@@ -1,25 +1,26 @@
-# Jenkins MySQL Job Databases Plugin
+# Jenkins PostgreSQL Job Databases Plugin
 
-[github.com/codevise/jenkins-mysql-job-databases-plugin](http://github.com/codevise/jenkins-mysql-job-databases-plugin)
+[github.com/lmlima/jenkins-postgresql-job-databases-plugin](https://github.com/lmlima/jenkins-postgresql-job-databases-plugin)
 
 Automatically set up test databases for Jenkins jobs.
 
 ## Usage
 
 In the global Jenkins configuration, set up host and port of your
-MySQL server and enter credentials of the MySQL user that shall be
+PostgreSQL server and enter credentials of the PostgreSQL user that shall be
 used to create databases and grant permissions. Note that this user
-needs the
-[`GRANT OPTION`](http://dev.mysql.com/doc/refman/5.1/en/privileges-provided.html#priv_grant-option)
-which is not included in
-[`ALL PRIVILEGES`](http://dev.mysql.com/doc/refman/5.1/en/privileges-provided.html#priv_all).
+needs at least CREATEDB and CREATEROLE options.
 
 Configure a database name in a job. The plugin ensures the database
 exists when the job is run. It grants all permissions for the database
 to a job specific user and publishes its credentials in the
-environment variables $MYSQL_USER and $MYSQL_PASSWORD.
+environment variables $PGSQL_USER and $PGSQL_PASSWORD.
 
 ## Contributors
+
+* [Leandro Muniz de Lima](https://github.com/lmlima) (`leandro.m.lima@ufes.br`)
+
+## Contributors of Jenkins MySQL Job Databases Plugin
 
 * [Tim Fischbach](https://github.com/tf) (`tfischbach@codevise.de`)
 * [Nicolas Rodriguez](https://github.com/n-rodriguez) (`nrodriguez@jbox-web.com`)

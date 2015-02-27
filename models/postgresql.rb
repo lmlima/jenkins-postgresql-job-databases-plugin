@@ -1,6 +1,6 @@
 require 'stringio'
 
-class MySQL
+class PostgreSQL
 
   class Error < RuntimeError
     attr_reader :out
@@ -23,8 +23,8 @@ class MySQL
   def execute(command)
     out = StringIO.new()
 
-    if launcher.execute("bash", "-c", "mysql --host='#{server}' --port='#{port}' --user='#{user}' --password='#{password}' --execute \"#{command}\"", {:out => out}) != 0
-      raise Error.new(out.string), 'MySQL command failed'
+    if launcher.execute("bash", "-c", "PGPASSWORD=#{password} psql postgres --host='#{server}' --port='#{port}' --username='#{user}' --command=\"#{command}\"", {:out => out}) != 0
+      raise Error.new(out.string), 'PostgreSQL command failed'
     end
 
     out.string
