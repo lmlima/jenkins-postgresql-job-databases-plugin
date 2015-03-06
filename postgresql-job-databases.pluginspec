@@ -1,7 +1,7 @@
 Jenkins::Plugin::Specification.new do |plugin|
   plugin.name = 'postgresql-job-databases'
-  plugin.display_name = 'PostgrSQL Job Databases'
-  plugin.version = '0.0.1'
+  plugin.display_name = 'PostgreSQL Job Databases'
+  plugin.version = '0.1.0'
   plugin.description = 'Automatically create and delete a PostgreSQL database for a job.'
 
   plugin.url = 'https://github.com/lmlima/jenkins-postgresql-job-databases-plugin'

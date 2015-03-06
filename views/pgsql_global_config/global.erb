@@ -1,0 +1,22 @@
+<%
+  f = taglib("/lib/form")
+
+  f.section :title => 'PostgreSQL Job Databases' do
+
+    f.entry :title => 'Jenkins Database User', :field => 'jenkins_pgsql_user' do
+      f.textbox :default => "#{descriptor.jenkins_pgsql_user}"
+    end
+
+    f.entry :title => 'Jenkins Database Password', :field => 'jenkins_pgsql_password' do
+      f.textbox :default => "#{descriptor.jenkins_pgsql_password}"
+    end
+
+    f.entry :title => 'Jenkins Database Server Host', :field => 'jenkins_pgsql_server_host' do
+      f.textbox :default => "#{descriptor.jenkins_pgsql_server_host}"
+    end
+
+    f.entry :title => 'Jenkins Database Server Port', :field => 'jenkins_pgsql_server_port', :description => 'These credentials are used to create databases for jobs.' do
+      f.textbox :default => "#{descriptor.jenkins_pgsql_server_port}"
+    end
+  end
+%>
